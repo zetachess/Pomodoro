@@ -125,7 +125,7 @@ button:disabled { cursor: not-allowed; opacity: .48; }
 .panel-head h2 > span:not(.count-pill) { color: var(--accent); font-family: var(--display); font-size: 1.28em; font-weight: 400; font-style: italic; }
 .subtle-button { margin: -7px -7px 0 0; }
 .timer-layout { min-height: 0; position: relative; display: flex; align-items: center; flex-direction: column; justify-content: center; gap: 20px; padding: 25px 0 19px; }
-@property --progress { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+@property --progress { syntax: '<percentage>'; inherits: true; initial-value: 0%; }
 .timer-orbit { --progress: 0%; width: min(68vw, 258px); aspect-ratio: 1; position: relative; flex: 0 0 auto; display: grid; place-items: center; }
 .orbit-track, .orbit-progress { position: absolute; inset: 0; border-radius: 50%; }
 .orbit-track { border: 1px solid #ffffff19; box-shadow: inset 0 0 42px #ffffff05; }
