@@ -230,6 +230,7 @@ function App() {
   }
 
   const modeColor = timer.mode === 'focus' ? 'tomato' : 'mint'
+  const timerProgress = Math.min(100, Math.max(0, 100 - (remaining / (durationFor(timer.mode, settings) * 60)) * 100))
   const shownTasks = tasks.filter((task) => showAllTasks || !task.done).slice(0, showAllTasks ? 8 : 4)
 
   return (
@@ -271,7 +272,7 @@ function App() {
             <article className={`panel timer-panel mode-${modeColor}`}>
               <div className="panel-head"><div><div className="panel-kicker"><span className="signal-pulse" /> SESIÓN ACTUAL</div><h2>Una cosa <span>a la vez.</span></h2></div><button className="icon-button subtle-button" aria-label="Ajustes del temporizador" onClick={() => setView('settings')}><Settings2 size={17} /></button></div>
               <div className="timer-layout">
-                <div className="timer-orbit" style={{ '--progress': `${Math.min(100, Math.max(0, 100 - (remaining / (durationFor(timer.mode, settings) * 60)) * 100))}%` } as React.CSSProperties}>
+                <div className="timer-orbit" style={{ '--progress': `${timerProgress}%`, '--progress-angle': `${timerProgress * 3.6}deg` } as React.CSSProperties}>
                   <div className="orbit-track" /><div className="orbit-progress" />
                   <div className="timer-face"><div className="timer-mode">{modeLabel(timer.mode).toUpperCase()}</div><div className="timer-value">{formatTime(remaining)}</div>{activeTask && <div className="timer-task"><span className="task-bullet" />{activeTask.title}</div>}</div>
                   <div className="orbit-marker" />
