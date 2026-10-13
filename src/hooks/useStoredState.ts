@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 
-export function useStoredState<T>(key: string, initialValue: T) {
+export function useStoredState<T>(key: string, initialValue: T, isValid?: (value: unknown) => value is T) {
   const [value, setValue] = useState<T>(() => {
     try {
       const stored = localStorage.getItem(key)
-      return stored ? (JSON.parse(stored) as T) : initialValue
+      if (!stored) return initialValue
+      const parsed: unknown = JSON.parse(stored)
+      const valid = isValid ? isValid(parsed) : true
+      return valid ? parsed as T : initialValue
     } catch {
       return initialValue
     }
