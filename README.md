@@ -1,6 +1,6 @@
 # Pomodoro Timer
 
-An open-source Pomodoro app for turning big tasks into small, focused blocks of work. It is designed to run without an account or backend: your tasks, sessions, and preferences are stored only in your browser's local storage.
+An open-source Pomodoro app for turning big tasks into small, focused blocks of work. It is designed to run without an account or backend: your tasks, sessions, and preferences are stored only in your browser's local storage. https://pomodoro-pi-woad.vercel.app/ 
 
 ![Pomodoro Timer](public/pomodoro-timer.png)
 
