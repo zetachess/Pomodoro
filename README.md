@@ -1,59 +1,63 @@
 # Pomodoro Timer
 
-Una aplicación Pomodoro para convertir una tarea grande en bloques pequeños de concentración. Está pensada para usarse sin cuenta y sin servidor: tus tareas, sesiones y preferencias se guardan únicamente en el almacenamiento local de tu navegador.
+An open-source Pomodoro app for turning big tasks into small, focused blocks of work. It is designed to run without an account or backend: your tasks, sessions, and preferences are stored only in your browser's local storage.
 
 ![Pomodoro Timer](public/pomodoro-timer.png)
 
-## Qué incluye
+## Features
 
-- Temporizador de Focus con pausas cortas y largas configurables.
-- Lista de tareas con edición, completado y vinculación al temporizador.
-- Historial de sesiones, racha y resumen de la semana.
-- Logros y resumen diario para copiar o compartir por WhatsApp.
-- Notificaciones del navegador y aviso sonoro opcionales.
-- Diseño responsive para móvil, tablet y escritorio.
-- Interfaz en español, sin backend, cuentas ni analítica integrada.
+- Configurable Focus sessions with short and long breaks.
+- Task list with editing, completion, and timer linking.
+- Session history, focus streaks, weekly insights, and achievements.
+- Daily summary that can be copied or shared through WhatsApp.
+- Optional browser notifications and sound alerts.
+- Responsive design for mobile, tablet, and desktop.
+- Spanish interface with no built-in accounts, backend, or analytics.
 
-## Requisitos
+## Open source
 
-- Node.js 20 o superior.
-- npm 10 o superior.
+Pomodoro Timer is open-source software released under the [MIT License](LICENSE). Contributions, bug reports, accessibility improvements, and translations are welcome.
 
-## Desarrollo local
+## Requirements
+
+- Node.js 20 or newer.
+- npm 10 or newer.
+
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre la URL que muestre Vite, normalmente `http://localhost:5173`.
+Open the URL printed by Vite, usually `http://localhost:5173`.
 
-## Comprobaciones antes de publicar
+## Checks before publishing
 
 ```bash
 npm run lint
 npm run build
 ```
 
-El build genera la carpeta `dist/`, que puede servirse como sitio estático.
+The production build is written to `dist/` and can be served as a static website.
 
-## Arquitectura
+## Architecture
 
 ```text
 src/
-├── App.tsx                 # Vistas y flujo principal de la aplicación
-├── types/                  # Tipos y valores iniciales del dominio
-├── hooks/                  # Persistencia React reutilizable
+├── App.tsx                 # Main views and application flow
+├── types/                  # Domain types and default values
+├── hooks/                  # Reusable React persistence hooks
 └── utils/
-    ├── pomodoro.ts         # Cálculos y formato del temporizador
-    └── storage.ts          # Claves y validación de datos persistidos
+    ├── pomodoro.ts         # Timer calculations and formatting
+    └── storage.ts          # Storage keys and persisted-data validation
 ```
 
-La aplicación es una SPA de React + TypeScript construida con Vite. No realiza peticiones de red durante el uso normal. Los enlaces de WhatsApp y las notificaciones solo se activan cuando el usuario los solicita.
+This is a React + TypeScript single-page application built with Vite. It does not make network requests during normal use. WhatsApp sharing and browser notifications are only triggered by explicit user actions.
 
-## Privacidad y almacenamiento
+## Privacy and storage
 
-Los datos se guardan en `localStorage` bajo estas claves:
+Data is stored in `localStorage` under these keys:
 
 - `pomogoblin-settings`
 - `pomogoblin-tasks`
@@ -61,22 +65,22 @@ Los datos se guardan en `localStorage` bajo estas claves:
 - `pomogoblin-timer`
 - `pomogoblin-active-task`
 
-No se envían a ningún servidor. Puedes borrar todo desde **Ajustes → Borrar datos locales**. El contenido guardado en el navegador puede ser leído o modificado por cualquier código que se ejecute con el mismo origen; no guardes secretos ni información sensible.
+Data is not sent to a server. You can remove everything from **Settings → Delete local data**. Browser storage can be read or modified by code running on the same origin, so do not store passwords, tokens, or other sensitive information in the app.
 
-## Seguridad
+## Security
 
-Consulta [SECURITY.md](SECURITY.md) para informar de vulnerabilidades. La guía también documenta el modelo de seguridad y los límites de privacidad del proyecto.
+See [SECURITY.md](SECURITY.md) for the security model, privacy boundaries, and vulnerability reporting guidance.
 
-## Contribuir
+## Contributing
 
-1. Crea un fork y una rama descriptiva.
-2. Instala las dependencias con `npm install`.
-3. Haz cambios pequeños y explica cualquier decisión de producto.
-4. Ejecuta `npm run lint` y `npm run build`.
-5. Abre un pull request con el problema, la solución y cómo lo has probado.
+1. Fork the repository and create a descriptive branch.
+2. Install dependencies with `npm install`.
+3. Keep changes focused and explain important product or security decisions.
+4. Run `npm run lint` and `npm run build`.
+5. Open a pull request describing the problem, solution, and verification steps.
 
-Para cambios visuales, incluye una captura de escritorio y otra móvil cuando sea posible. Evita añadir dependencias o telemetría sin explicar su impacto en privacidad y mantenimiento.
+For visual changes, screenshots from desktop and mobile are helpful. Please avoid adding dependencies or telemetry without explaining their privacy and maintenance impact.
 
-## Licencia
+## License
 
-Este proyecto se distribuye bajo la licencia MIT. Consulta [LICENSE](LICENSE).
+Pomodoro Timer is distributed under the MIT License. See [LICENSE](LICENSE).
