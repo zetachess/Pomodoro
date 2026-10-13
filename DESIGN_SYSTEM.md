@@ -4,12 +4,6 @@
 
 La interfaz adopta la identidad de un reloj de estudio cálido: carbón con matiz espresso, coral tomate para el foco y verde salvia para los descansos. El aro circular del temporizador y el tomate dibujado en CSS son los elementos distintivos. Se mantiene el producto en español y el modo oscuro permanente.
 
-## Skills y referencias
-
-- `frontend-design` y `ui-ux-pro-max` locales guiaron la composición, jerarquía, interacción móvil, contraste, estados de foco y reducción de motivos genéricos.
-- Se inspeccionó [Quotable Data](https://github.com/quotable-io/data) para el pedido de citas. El repositorio ofrece citas inglesas y no incluye un dataset de traducciones españolas, por lo que no se incorporó: traducirlas incumpliría el requisito de citas originales en español.
-- `premium-web-design`, `ui-design-system`, `senior-frontend`, `code-reviewer`, `code-simplifier`, `accessibility` y `playwright-skill` no están instaladas en este entorno. No se atribuyen revisiones a esas skills.
-
 ## Tokens y componentes
 
 - **Superficies:** `--canvas`, `--surface`, `--surface-raised` y `--surface-high`, en carbón cálido con elevación gradual.
